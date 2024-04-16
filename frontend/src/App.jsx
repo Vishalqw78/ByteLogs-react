@@ -1,7 +1,7 @@
 import "./styles.css";
 import "./styles/tailwind-pre-build.css";
-import LivePortal from "./components/LivePortal";
 import Homepage from "./components/Homepage";
+
 import {
   BrowserRouter as Router,
   Route,

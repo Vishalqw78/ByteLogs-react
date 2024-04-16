@@ -18,7 +18,7 @@ const Header = () => {
 
   useEffect(() => {
     const changeNavbarBackground = () => {
-      if (window.pageYOffset >= 1) {
+      if (window.scrollY >= 1) {
         setNavFixed(true);
       } else {
         setNavFixed(false);
@@ -111,10 +111,16 @@ const Header = () => {
                         {menu.name}
                       </Link>
                     )}
+                    
                   </li>
                 )}
               </React.Fragment>
             ))}
+            <li className="nav-item">
+            {username && <Link to="/Profile" className="nav-link block">
+                        {"Profile"}
+                      </Link>}
+            </li>
           </ul>
           <div className="order-1 ml-auto md:order-2 md:ml-0">
             <div
