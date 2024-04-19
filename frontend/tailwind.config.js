@@ -22,6 +22,7 @@ export default {
       black: "#000",
       white: "#fff",
       primary: "#6fd0c8",
+      
 
       gray: {
         100: "#f7fafc",

@@ -25,7 +25,7 @@
     },
     {
       "name": "Login",
-      "url": "/page/4"
+      "url": "/signin"
     }
   ],
   "footer": [

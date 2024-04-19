@@ -1,16 +1,19 @@
 import menu from "../config/menu.json";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { IoSearch } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import Logo from "./Logo";
-import "../styles/ab.css"; // Import configData.js
+import "../styles/ab.css";
 import "../styles/abc.css";
 import SearchModal from "./SearchModal";
+import { AuthContext } from "../context/AuthContext";
 
 const Header = () => {
   // distructuring the main menu from menu object
   const { main } = menu;
-  const username = "undefined";
+  const {currentUser} =useContext(AuthContext);
+
+  const username = currentUser?.Name;
 
   // states declaration
   const [navFixed, setNavFixed] = useState(false);
@@ -31,7 +34,7 @@ const Header = () => {
     <>
       <header
         className={`sticky top-0 z-50 bg-white py-2 transition-all ${
-          navFixed ? "shadow" : "pt-8 md:pt-16"
+          navFixed ? "shadow" : "pt-2 md:pt-4"
         }`}
       >
         <nav className="navbar container">
