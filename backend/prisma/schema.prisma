@@ -21,6 +21,29 @@ model User {
   avatar   String
   verified Boolean @default(false)
   token    token[]
+  post     Post[]
+  social   Social?
+}
+
+model Post {
+  id       String   @id @default(uuid())
+  title    String
+  content  String
+  image    String   @default("https://bookworm-light-nextjs.vercel.app/_next/image?url=%2Fimages%2Fposts%2F03.jpg&w=1080&q=75")
+  author   User     @relation(fields: [authorId], references: [id])
+  authorId String
+  views    Int      @default(0)
+  date     DateTime @default(now())
+  Category String[]
+}
+
+model Social {
+  id       String  @id @default(uuid())
+  user     User?   @relation(fields: [userId], references: [id])
+  userId   String? @unique
+  insta    String?
+  twitter  String?
+  facebook String?
 }
 
 model token {
