@@ -498,7 +498,6 @@ export const updateScrollView = (container, item) => {
 };
 
 const CommandList = ({ items, command }) => {
-  console.log(items, command);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const commandListContainer = useRef(null);
   const selectedButtonRef = useRef(null);

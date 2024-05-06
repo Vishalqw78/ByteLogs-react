@@ -38,6 +38,7 @@ export default Image.extend({
   renderHTML({ node, HTMLAttributes }) {
     HTMLAttributes.class = ` custom-image-${node.attrs.size}`;
     HTMLAttributes.class += ` custom-image-float-${node.attrs.float}`;
+    HTMLAttributes.alt +=' ';
     HTMLAttributes.class += ` resizable`;
 
     return [
